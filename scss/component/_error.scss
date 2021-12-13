@@ -1,0 +1,16 @@
+/* Página error 404 */
+
+.error {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 30px;
+}
+.contenedorEtiqueta {
+  display: flex;
+  justify-content: start;
+  margin: 100px 30px 30px 40px;
+  .tagError {
+    color: black;
+    font-size: 0.6rem;
+  }
+}

@@ -1,0 +1,63 @@
+/* Section1 */
+@import "../base/extends";
+
+.section1,
+.section2 {
+  margin-top: 50px;
+}
+#nosotros,
+#servicios {
+  height: 90px;
+  display: block;
+}
+.nosotros {
+  @extend %titulos;
+}
+.servicios {
+  @extend %titulos;
+}
+.section1 {
+  p {
+    text-indent: 15px;
+    margin-top: 40px;
+    margin-right: 30px;
+    margin-left: 30px;
+    font-weight: 600;
+    font-size: 0.6rem;
+    line-height: 190%;
+  }
+}
+/* Section2 */
+.section2 {
+  .containerServicios {
+    p {
+      text-indent: 15px;
+      margin-top: 50px;
+      margin-right: 30px;
+      margin-left: 30px;
+      font-weight: 600;
+      font-size: 0.6rem;
+    }
+  }
+}
+.containerServiciosLista {
+  #servicios2 {
+    font-size: 0.8rem;
+    text-decoration: underline;
+    text-align: left;
+    text-indent: 45px;
+    font-weight: 600;
+    margin-top: 55px;
+  }
+}
+.containerServiciosLista {
+  ul {
+    margin-bottom: 70px;
+    li {
+      font-size: 0.7rem;
+      list-style-type: circle;
+      margin-left: 30px;
+      font-weight: 500;
+    }
+  }
+}

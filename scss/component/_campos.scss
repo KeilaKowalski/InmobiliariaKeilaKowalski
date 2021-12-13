@@ -1,0 +1,44 @@
+/* Pagina Campos */
+.tituloCampos {
+  font-size: 0.9rem;
+  text-indent: 40px;
+  font-weight: 600;
+  text-decoration: underline;
+  margin: 50px 0px;
+}
+.camposContenedor {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px 20px;
+  justify-content: space-evenly;
+  .imgCampoContenedor {
+    display: flex;
+    flex-direction: column;
+    background-color: #d7d7d7;
+    align-items: center;
+    margin: 30px 15px;
+    &:hover {
+      transform: scale(1.2, 1.2);
+      transition: all 0.6s ease;
+    }
+  }
+}
+.imgCampoContenedor h2 {
+  font-size: 0.8rem;
+  margin: 20px 10px 5px 10px;
+}
+.imgCampoContenedor h3 {
+  font-size: 0.6rem;
+  margin: 5px;
+}
+.imgCampoContenedor p {
+  font-size: 0.6rem;
+  margin: 5px 5px 10px 5px;
+}
+.imgCampoContenedor a {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: black;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}

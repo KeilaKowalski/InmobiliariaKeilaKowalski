@@ -1,0 +1,6 @@
+/* Mixins */
+@mixin imgFooter($width, $height, $marginR) {
+  width: $width;
+  height: $height;
+  margin-right: $marginR;
+}

@@ -1,0 +1,49 @@
+/* Tabla con Grid */
+@import "../base/extends";
+
+.contenedorTabla {
+  display: grid;
+  grid-template-areas:
+    "titulo1 titulo2 titulo3"
+    "texto1 texto2 texto3";
+  border: 3px #006600 solid;
+  margin: 100px 30px 30px 30px;
+  justify-items: center;
+}
+.tituloContenedor1 {
+  grid-area: titulo1;
+}
+.tituloContenedor2 {
+  grid-area: titulo2;
+}
+.tituloContenedor3 {
+  grid-area: titulo3;
+}
+.tituloGrid {
+  color: #006600;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 0.9rem;
+  padding: 8px 5px;
+}
+.textoContenedor1 {
+  grid-area: texto1;
+  @extend %bordeTextoTabla;
+}
+.textoContenedor2 {
+  grid-area: texto2;
+  @extend %bordeTextoTabla;
+}
+.textoContenedor3 {
+  grid-area: texto3;
+  @extend %bordeTextoTabla;
+}
+.textoGrid {
+  text-align: center;
+  padding: 10px 45px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  justify-self: center;
+  padding: 25px 20px;
+  margin: 8px 5px;
+}

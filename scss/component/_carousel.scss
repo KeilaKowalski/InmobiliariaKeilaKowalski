@@ -1,0 +1,27 @@
+/* Carousel y subtitulos */
+.centrar-carousel {
+  margin: 20px auto;
+  width: 60%;
+  height: auto;
+}
+.subtitulo1 {
+  font-size: 1rem;
+  text-decoration: none;
+  margin-top: 20px;
+  text-align: center;
+}
+.subtitulo2Centrado {
+  display: flex;
+  justify-content: center;
+}
+.subtitulo2 {
+  display: inline-block;
+  font-size: 0.7rem;
+  &:hover {
+    transform: scale(1.5, 1.5);
+    transition: all 0.5s ease;
+  }
+}
+.camposLink {
+  color: rgb(8, 6, 6);
+}

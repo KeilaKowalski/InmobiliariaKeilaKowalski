@@ -1,0 +1,47 @@
+/* Footer */
+@import "../base/mixins";
+
+.footer {
+  display: grid;
+  grid-template-areas:
+    "ubi social"
+    "iframe aside";
+}
+.ubi {
+  grid-area: ubi;
+  justify-self: center;
+}
+#ubicacion {
+  font-size: 0.6rem;
+  margin: 3px 0px 2px 0px;
+}
+.social {
+  grid-area: social;
+  justify-self: center;
+  align-self: flex-end;
+}
+#redes {
+  font-size: 0.5rem;
+  margin: 10px 0px 1px 0px;
+}
+.iframe {
+  grid-area: iframe;
+  width: 100%;
+  margin-left: 15px;
+  margin-bottom: 5px;
+  iframe {
+    width: 95%;
+  }
+}
+.aside {
+  grid-area: aside;
+  align-self: center;
+  justify-self: center;
+  .socialContenedor {
+    display: inline-block;
+    padding: 0px 5px;
+  }
+}
+.imgFooter {
+  @include imgFooter(50%, 50px, 50px);
+}

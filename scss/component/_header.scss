@@ -1,0 +1,19 @@
+/* Header */
+.imgLogo {
+  width: 100%;
+}
+.footer,
+.bg-marron {
+  background-color: $color-nav;
+}
+.fijar-navbar {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+}
+.nav-item:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}

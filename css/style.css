@@ -1,0 +1,494 @@
+@charset "UTF-8";
+/* Variables */
+/* Extends */
+.servicios, .nosotros {
+  font-size: 1.2rem;
+  text-align: left;
+  text-indent: 45px;
+  letter-spacing: 4px;
+  text-shadow: black 6px 6px 8px;
+  text-transform: uppercase;
+}
+
+.textoContenedor3, .textoContenedor2, .textoContenedor1 {
+  border: 2px dotted #009000;
+}
+
+/* Mixins */
+/* Maps */
+/* Index */
+html {
+  font-size: 25px;
+  /* 1rem = 25px */
+}
+
+body {
+  background-color: #e0cd86;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Header */
+.imgLogo {
+  width: 100%;
+}
+
+.footer,
+.bg-marron {
+  background-color: #cbaa64;
+}
+
+.fijar-navbar {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-item:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Main */
+#titulo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 10px;
+  background-color: #cbaa64;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Carousel y subtitulos */
+.centrar-carousel {
+  margin: 20px auto;
+  width: 60%;
+  height: auto;
+}
+
+.subtitulo1 {
+  font-size: 1rem;
+  text-decoration: none;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.subtitulo2Centrado {
+  display: flex;
+  justify-content: center;
+}
+
+.subtitulo2 {
+  display: inline-block;
+  font-size: 0.7rem;
+}
+.subtitulo2:hover {
+  transform: scale(1.5, 1.5);
+  transition: all 0.5s ease;
+}
+
+.camposLink {
+  color: #080606;
+}
+
+/* Section1 */
+/* Extends */
+.servicios, .nosotros {
+  font-size: 1.2rem;
+  text-align: left;
+  text-indent: 45px;
+  letter-spacing: 4px;
+  text-shadow: black 6px 6px 8px;
+  text-transform: uppercase;
+}
+
+.textoContenedor3, .textoContenedor2, .textoContenedor1 {
+  border: 2px dotted #009000;
+}
+
+.section1,
+.section2 {
+  margin-top: 50px;
+}
+
+#nosotros,
+#servicios {
+  height: 90px;
+  display: block;
+}
+
+.section1 p {
+  text-indent: 15px;
+  margin-top: 40px;
+  margin-right: 30px;
+  margin-left: 30px;
+  font-weight: 600;
+  font-size: 0.6rem;
+  line-height: 190%;
+}
+
+/* Section2 */
+.section2 .containerServicios p {
+  text-indent: 15px;
+  margin-top: 50px;
+  margin-right: 30px;
+  margin-left: 30px;
+  font-weight: 600;
+  font-size: 0.6rem;
+}
+
+.containerServiciosLista #servicios2 {
+  font-size: 0.8rem;
+  text-decoration: underline;
+  text-align: left;
+  text-indent: 45px;
+  font-weight: 600;
+  margin-top: 55px;
+}
+
+.containerServiciosLista ul {
+  margin-bottom: 70px;
+}
+.containerServiciosLista ul li {
+  font-size: 0.7rem;
+  list-style-type: circle;
+  margin-left: 30px;
+  font-weight: 500;
+}
+
+/* Tabla con Grid */
+/* Extends */
+.nosotros, .servicios {
+  font-size: 1.2rem;
+  text-align: left;
+  text-indent: 45px;
+  letter-spacing: 4px;
+  text-shadow: black 6px 6px 8px;
+  text-transform: uppercase;
+}
+
+.textoContenedor3, .textoContenedor2, .textoContenedor1 {
+  border: 2px dotted #009000;
+}
+
+.contenedorTabla {
+  display: grid;
+  grid-template-areas: "titulo1 titulo2 titulo3" "texto1 texto2 texto3";
+  border: 3px #006600 solid;
+  margin: 100px 30px 30px 30px;
+  justify-items: center;
+}
+
+.tituloContenedor1 {
+  grid-area: titulo1;
+}
+
+.tituloContenedor2 {
+  grid-area: titulo2;
+}
+
+.tituloContenedor3 {
+  grid-area: titulo3;
+}
+
+.tituloGrid {
+  color: #006600;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 0.9rem;
+  padding: 8px 5px;
+}
+
+.textoContenedor1 {
+  grid-area: texto1;
+}
+
+.textoContenedor2 {
+  grid-area: texto2;
+}
+
+.textoContenedor3 {
+  grid-area: texto3;
+}
+
+.textoGrid {
+  text-align: center;
+  padding: 10px 45px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  justify-self: center;
+  padding: 25px 20px;
+  margin: 8px 5px;
+}
+
+/* Footer */
+/* Mixins */
+.footer {
+  display: grid;
+  grid-template-areas: "ubi social" "iframe aside";
+}
+
+.ubi {
+  grid-area: ubi;
+  justify-self: center;
+}
+
+#ubicacion {
+  font-size: 0.6rem;
+  margin: 3px 0px 2px 0px;
+}
+
+.social {
+  grid-area: social;
+  justify-self: center;
+  align-self: flex-end;
+}
+
+#redes {
+  font-size: 0.5rem;
+  margin: 10px 0px 1px 0px;
+}
+
+.iframe {
+  grid-area: iframe;
+  width: 100%;
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+.iframe iframe {
+  width: 95%;
+}
+
+.aside {
+  grid-area: aside;
+  align-self: center;
+  justify-self: center;
+}
+.aside .socialContenedor {
+  display: inline-block;
+  padding: 0px 5px;
+}
+
+.imgFooter {
+  width: 50%;
+  height: 50px;
+  margin-right: 50px;
+}
+
+/* Pagina Contacto */
+/* Maps */
+.tituloContacto {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.contactoFormulario {
+  margin-left: 90px;
+  text-align: left;
+}
+.contactoFormulario .labelContacto {
+  font-size: 0.7rem;
+  margin: 10px 0 10px 0;
+}
+
+.input1-2-3,
+textarea {
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+.botonEnviar {
+  font-size: 0.6rem;
+  font-weight: 600;
+  margin: 10px 0 20px 0;
+}
+
+.section3 {
+  margin-left: 35px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.tituloInfo {
+  font-size: 0.7rem;
+  text-decoration: underline;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.info {
+  font-size: 0.6rem;
+  text-indent: 1px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Pagina Campos */
+.tituloCampos {
+  font-size: 0.9rem;
+  text-indent: 40px;
+  font-weight: 600;
+  text-decoration: underline;
+  margin: 50px 0px;
+}
+
+.camposContenedor {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px 20px;
+  justify-content: space-evenly;
+}
+.camposContenedor .imgCampoContenedor {
+  display: flex;
+  flex-direction: column;
+  background-color: #d7d7d7;
+  align-items: center;
+  margin: 30px 15px;
+}
+.camposContenedor .imgCampoContenedor:hover {
+  transform: scale(1.2, 1.2);
+  transition: all 0.6s ease;
+}
+
+.imgCampoContenedor h2 {
+  font-size: 0.8rem;
+  margin: 20px 10px 5px 10px;
+}
+
+.imgCampoContenedor h3 {
+  font-size: 0.6rem;
+  margin: 5px;
+}
+
+.imgCampoContenedor p {
+  font-size: 0.6rem;
+  margin: 5px 5px 10px 5px;
+}
+
+.imgCampoContenedor a {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: black;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* Media Query */
+/* Mixins */
+/* Main Query */
+@media only screen and (max-width: 580px) {
+  #titulo {
+    font-size: 1rem;
+  }
+}
+
+/* Carousel y Subtitulos*/
+@media only screen and (max-width: 570px) {
+  .subtitulo1 {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .subtitulo2 {
+    font-size: 0.6rem;
+  }
+}
+
+/* Tabla Query */
+@media only screen and (max-width: 640px) {
+  .contenedorTabla {
+    grid-template-areas: "titulo1" "texto1" "titulo2" "texto2" "titulo3" "texto3";
+  }
+}
+
+/* Footer Query */
+@media only screen and (max-width: 690px) {
+  .socialContenedor {
+    display: flex;
+    justify-content: center;
+    margin-left: 70px;
+  }
+}
+@media only screen and (max-width: 690px) and (max-width: 670px) {
+  .socialContenedor {
+    margin-left: 90px;
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .imgFooter {
+    width: 35%;
+    height: 35px;
+    margin-right: 80px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .social,
+.iframe {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .social {
+    margin-left: 20px;
+  }
+}
+
+/* Pagina Contacto Query */
+@media only screen and (max-width: 630px) {
+  .label {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .contactoFormulario {
+    margin-left: 50px;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .textarea {
+    display: flex;
+    margin-right: 40px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .input1-2-3 {
+    margin-right: 30px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .section3 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Página error 404 */
+.error {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 30px;
+}
+
+.contenedorEtiqueta {
+  display: flex;
+  justify-content: start;
+  margin: 100px 30px 30px 40px;
+}
+.contenedorEtiqueta .tagError {
+  color: black;
+  font-size: 0.6rem;
+}
+
+/*# sourceMappingURL=style.css.map */
