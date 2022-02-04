@@ -1,73 +1,96 @@
+// let accion = prompt("Escriba la opción que desee realizar: comprar - vender - alquilar").toLowerCase();
+// while (accion === "") {
+//     alert("Porfavor ingrese su acción");
+// } if (accion === "comprar" || accion === "alquilar") {
+//     console.log("Usted desea " + accion);
+// } else if (accion === "vender") {
+//     console.log("Complete el formulario para comunicarse con nosotros");
+// } else {
+//     console.log("Opción ingresada no valida");
+// }
 
-let accion = prompt("Escriba la opción que desee realizar: comprar - vender - alquilar").toLowerCase();
-while (accion === "") {
-    alert("Porfavor ingrese su acción");
-} if (accion === "comprar" || accion === "alquilar") {
-    console.log("Usted desea " + accion);
-} else if (accion === "vender") {
-    console.log("Complete el formulario para comunicarse con nosotros");
-} else {
-    console.log("Opción ingresada no valida");
-}
-
-//Creacion de objetos
-class Inmueble {
-    constructor (tipo, ubicacion, ha, precio) {
-        this.tipo = tipo;
-        this.ubicacion = ubicacion;
-        this.ha = ha;
-        this.precio = precio;
-    }
-    precioTotalDeHa(){
-        let precioTotal = this.ha * this.precio;
-        return precioTotal;
-    }
-    sumaComision() {
-       let comision = this.precioTotalDeHa() * 0.03;
-       return `El precio de la comisión es de ${comision}USD.`
+//FUNCION PARA CALCULAR PRECIO TOTAL DE HA Y COMISION DE TODOS LOS INMUEBLES
+function calculoDePrecios() {
+    for (const inmueble of inmuebles) {
+        console.log(inmueble.precioTotalDeHa());
+        console.log(inmueble.sumaComision());
     }
 }
+// calculoDePrecios();
 
-//Array para almacenar objetos(inmuebles)
-const inmuebles = [];
-inmuebles.push(new Inmueble("campo", "Alma Fuerte, Córdoba", 1200, 1500));
-inmuebles.push(new Inmueble("chacra", "Ctalamochita, Córdoba", 5, 800));
-inmuebles.push(new Inmueble("finca", "Punilla, Córdoba", 4, 1000));
+//Descomentar para verificar la otra opcion para calculcar precio y comision de los inmuebles:
+// inmuebles.forEach((elemento) => {
+//     console.log(elemento.precioTotalDeHa());
+//     console.log(elemento.sumaComision());
+// });
 
-for (const inmueble of inmuebles) {
-    console.log(inmueble.tipo);
-    console.log(inmueble.precioTotalDeHa());
-    console.log(inmueble.sumaComision());
-;}
+//MAPEO PARA SABER RESULTADO DE PRECIO * HA DE CADA INMUEBLE
+const inmueblesPreciosDeHa = inmuebles.map((elemento) => {
+    return {
+        id: elemento.id,
+        precio: elemento.precioTotalDeHa()
+    }
+})
+// console.log(inmueblesPreciosDeHa);
 
+//PARA GENERAR UN BOTON DE FILTRO ALFABETICO 
+const ubicacionOrdenada = inmuebles.sort((a, b) => {
+    if (a.ubicacion > b.ubicacion) {
+        return 1;
+    }
+    if (a.ubicacion < b.ubicacion) {
+        return -1;
+    }
+})
+// console.log(ubicacionOrdenada);
 
-//Descomentar esta parte para que apareza el prompt:
-// let precioProducto = parseInt(prompt("Ingrese el número de producto que desea comprar: 1-Arroz / 2-Aceite / 3-Azucar"));
-//     if (precioProducto === 0) {
-//         console.log("Numero no valido");
-//     } else if (precioProducto === 1){
-//         console.log("El precio del arroz es de $100");
-//     } else if (precioProducto === 2) {
-//         console.log("El precio del aceite es de $150");
-//     } else if (precioProducto === 3){
-//         console.log("El precio del azucar es de $200");
-//     } 
+//PARA FILTRAR POR TIPO DE INMUEBLE
+const campos = inmuebles.filter((elemento) => elemento.tipo.includes("campo"));
+// console.log(campos);
+const chacras = inmuebles.filter((elemento) => elemento.tipo.includes("chacra"));
+// console.log(chacras);
+const fincas = inmuebles.filter((elemento) => elemento.tipo.includes("finca"));
+// console.log(fincas);
 
-//Descomentar la siguiente parte para la funcion:
-// let input = prompt("ingrese que producto desea llevar").toLowerCase();
-//     function total() {
-//         let arroz = 100;
-//         let aceite = 150;
-//         let azucar = 200;
-//         const resultado = arroz + aceite + azucar;
-//         if(input === "arroz aceite azucar") {
-//             console.log(`El total de sus productos es $${resultado}`);
-//         } else if (input === "arroz aceite") {
-//             console.log(`El total de sus productos es $${arroz + aceite}`);
-//         } else if (input === "arroz azucar") {
-//             console.log(`El total de sus productos es $${arroz + azucar}`);
-//         } else if (input === "aceite azucar") {
-//             console.log(`El total de sus productos es $${aceite + azucar}`);
-//         }   
-//     }
-//     total();
+//CREAR ELEMENTOS MANIPULANDO EL DOM A PARTIR DE LA INFO DE MIS OBJETOS DENTRO DEL ARRAY
+//MODIFICAR ETIQUETAS EXISTENTES EN FUNCION DEL RESULTADO DE OPERACIONES
+
+const contenedorInmuebles = document.getElementById("contenedorInmuebles");
+const selectFiltro = document.getElementById("filtro");
+
+selectFiltro.addEventListener('change', () => {
+    console.log(selectFiltro.value);
+    if(selectFiltro.value === "todos"){
+        mostrarInmuebles(inmuebles);
+    }else {
+        console.log(inmuebles.filter(elemento => elemento.tipo === selectFiltro.value));
+        mostrarInmuebles(inmuebles.filter(elemento => elemento.tipo === selectFiltro.value));
+    }
+})
+mostrarInmuebles(inmuebles)
+
+function mostrarInmuebles (array) {
+      contenedorInmuebles.innerHTML = "";
+    array.forEach((producto) => {
+        let div = document.createElement("div");
+        div.className = "producto";
+        div.innerHTML += ` 
+        <div class="card" style="width: 15rem;">
+        <img src="${producto.img}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title fs-3">${producto.tipo}</h5>
+          <p class="card text">${producto.ubicacion}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">(${producto.ha}ha)</li>
+          <li class="list-group-item">Por ha $${producto.precio}USD</li>
+        </ul>
+        <div class="card-body">
+          <a href="../secciones/campos.html" class="card-link">Contacto</a>
+          <a href="#" class="btn btn-success">${producto.accion}</a>
+        </div>
+      </div>
+        `;
+        contenedorInmuebles.appendChild(div);
+    })
+}
