@@ -61,17 +61,19 @@ const mostrarInmuebles = async () => {
  };
  mostrarInmuebles();
  
-
+//No funciona el buscador ni el filtro.
  const BuscadorYFiltro = async () => {
     const responseInmuebles = await fetch("../inmuebles.json");
     const inmuebleS = await responseInmuebles.json();
 
     //FILTRO
     selectFiltro.addEventListener('change', () => {
+        
         console.log(selectFiltro.value);
         if(selectFiltro.value === "todos"){
             mostrarInmuebles();
         }else {
+            //Me devuelve por consola un array de los inmuebles que coinciden con el tipo, pero sigue mostrando todos en pantalla
             console.log(inmuebleS.filter(elemento => elemento.tipo === selectFiltro.value))
              mostrarInmuebles(inmuebleS.filter(elemento => elemento.tipo === selectFiltro.value));
         }
@@ -83,7 +85,7 @@ const mostrarInmuebles = async () => {
  }
  BuscadorYFiltro();
 
- 
+ //Codigo anterior a utilizar el fetch
 //ECOMMERCE
 //mostrarInmuebles(inmuebles)
 // function mostrarInmuebles (array) {
