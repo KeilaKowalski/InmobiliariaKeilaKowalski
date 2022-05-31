@@ -1,4 +1,4 @@
-//CLASE-MOLDE PARA CREAR OBJETOS
+// CLASE-MOLDE PARA CREAR OBJETOS
 class Inmueble {
     constructor (id, img, tipo, ubicacion, ha, precio, accion) {
         this.id = id;
@@ -15,7 +15,7 @@ class Inmueble {
     }
     sumaComision() {
        let comision = this.precioTotalDeHa() * 0.03;
-       return `El precio de la comisión es de ${comision} USD.`
+       return `La comisión es de $${comision} USD.`
     }
 }
 

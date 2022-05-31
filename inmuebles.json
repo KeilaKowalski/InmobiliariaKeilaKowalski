@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "img": "../multimedia/campos/campo1_1_.webp",
+    "tipo": "Campo",
+    "ubicacion": "Alma Fuerte, Córdoba",
+    "ha": 1200,
+    "precio": 1500,
+    "accion": "Vende"
+  },
+  {
+    "id": 2,
+    "img": "../multimedia/campos/campo2_1_.webp",
+    "tipo": "Campo",
+    "ubicacion": "San Luis, San Luis",
+    "ha": 1800,
+    "precio": 1300,
+    "accion": "Alquila"
+  },
+  {
+    "id": 3,
+    "img": "../multimedia/campos/campo4_1_.webp",
+    "tipo": "Campo",
+    "ubicacion": "Rio Cuarto, Córdoba",
+    "ha": 300,
+    "precio": 1000,
+    "accion": "Vende"
+  },
+  {
+    "id": 4,
+    "img": "../multimedia/campos/campo5_1_.webp",
+    "tipo": "Campo",
+    "ubicacion": "Villa La Punta, Santiago del Estero",
+    "ha": 1700,
+    "precio": 1750,
+    "accion": "Alquila"
+  },
+  {
+    "id": 5,
+    "img": "../multimedia/campos/campo6-_1_.webp",
+    "tipo": "Campo",
+    "ubicacion": "La Banda, Santiago del Estero",
+    "ha": 1200,
+    "precio": 1300,
+    "accion": "Alquila"
+  },
+  {
+    "id": 6,
+    "img": "../multimedia/campos/campo7-_1_.webp",
+    "tipo": "Campo",
+    "ubicacion": "Venado Tuerto, Santa Fe",
+    "ha": 1900,
+    "precio": 1400,
+    "accion": "Vende"
+  },
+  {
+    "id": 7,
+    "img": "../multimedia/campos/campo8-_1_.webp",
+    "tipo": "Campo",
+    "ubicacion": "Luján, Mendoza",
+    "ha": 1300,
+    "precio": 900,
+    "accion": "Vende"
+  },
+  {
+    "id": 8,
+    "img": "../multimedia/campos/chacra1-_1_.webp",
+    "tipo": "Chacra",
+    "ubicacion": "Ctalamochita, Córdoba",
+    "ha": 5,
+    "precio": 800,
+    "accion": "Vende"
+  },
+  {
+    "id": 9,
+    "img": "../multimedia/campos/chacra2-_1_.webp",
+    "tipo": "Chacra",
+    "ubicacion": "San Luis, San Luis",
+    "ha": 3,
+    "precio": 700,
+    "accion": "Vende"
+  },
+  {
+    "id": 10,
+    "img": "../multimedia/campos/chacra3-_1_.webp",
+    "tipo": "Chacra",
+    "ubicacion": "Mina Clavero, Córdoba",
+    "ha": 1,
+    "precio": 1200,
+    "accion": "Vende"
+  },
+  {
+    "id": 11,
+    "img": "../multimedia/campos/chacra4-_1_.webp",
+    "tipo": "Chacra",
+    "ubicacion": "Santiago del Estero, Santiago del Estero",
+    "ha": 2,
+    "precio": 1200,
+    "accion": "Vende"
+  },
+  {
+    "id": 12,
+    "img": "../multimedia/campos/finca1-_1_.webp",
+    "tipo": "Finca",
+    "ubicacion": "Punilla, Córdoba",
+    "ha": 4,
+    "precio": 1000,
+    "accion": "Alquila"
+  },
+  {
+    "id": 13,
+    "img": "../multimedia/campos/finca2-_1_.webp",
+    "tipo": "Finca",
+    "ubicacion": "El Durazno, Córdoba",
+    "ha": 15,
+    "precio": 1000,
+    "accion": "Vende"
+  },
+  {
+    "id": 14,
+    "img": "../multimedia/campos/finca3-_1_.webp",
+    "tipo": "Finca",
+    "ubicacion": "Avellaneda, Santa Fe",
+    "ha": 10,
+    "precio": 750,
+    "accion": "Vende"
+  },
+  {
+    "id": 15,
+    "img": "../multimedia/campos/finca4.webp",
+    "tipo": "Finca",
+    "ubicacion": "Santa Rosa, La Pampa",
+    "ha": 6,
+    "precio": 900,
+    "accion": "Vende"
+  },
+  {
+    "id": 16,
+    "img": "../multimedia/campos/finca5.webp",
+    "tipo": "Finca",
+    "ubicacion": "Villa Gral Belgrano, Córdoba",
+    "ha": 5,
+    "precio": 1250,
+    "accion": "Vende"
+  }
+]
