@@ -12,7 +12,7 @@ const selectFiltro = document.getElementById("filtro");
 
 const buscador = document.getElementById("search");
 
-
+//Funcion para mostrar todos los inmuebles
 const mostrarInmuebles = async () => {
     const responseInmuebles = await fetch("../inmuebles.json");
     const inmuebleS = await responseInmuebles.json();
@@ -36,8 +36,8 @@ const mostrarInmuebles = async () => {
                           <li class="list-group-item">Por ha $${precio}USD</li>
                       </ul>
                       <div class="card-body">
-                          <a href="../secciones/contacto.html" class="card-link">Contacto</a>
-                          <a href="#" class="btn btn-secondary">${accion}</a>
+                          <a href="../secciones/contacto.html" class="card-link btn-sm">Contacto</a>
+                          <a href="#" class="btn btn-secondary btn-sm">${accion}</a>
                           <a id="botonAgregar${id}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="fas fa-cart-plus"></i></a>
                       </div>
                       </div>
@@ -61,87 +61,90 @@ const mostrarInmuebles = async () => {
  };
  mostrarInmuebles();
  
-//No funciona el buscador ni el filtro.
- const BuscadorYFiltro = async () => {
+ //Funcion para mostrar inmuebles dependiendo su ubicacion y tipo
+ const buscadorYFiltro = async () => {
     const responseInmuebles = await fetch("../inmuebles.json");
     const inmuebleS = await responseInmuebles.json();
 
-    //FILTRO
-    selectFiltro.addEventListener('change', () => {
-        
-        console.log(selectFiltro.value);
-        if(selectFiltro.value === "todos"){
+    selectFiltro.addEventListener('change', (event) => {
+        //console.log(event.target.value);
+        const filtro = event.target.value;
+        if(filtro === "todos") {
             mostrarInmuebles();
         }else {
-            //Me devuelve por consola un array de los inmuebles que coinciden con el tipo, pero sigue mostrando todos en pantalla
-            console.log(inmuebleS.filter(elemento => elemento.tipo === selectFiltro.value))
-             mostrarInmuebles(inmuebleS.filter(elemento => elemento.tipo === selectFiltro.value));
+            //console.log(inmuebleS.filter(elemento => elemento.tipo === filtro))
+            const inmuebleFiltrado = inmuebleS.filter(elemento => elemento.tipo === filtro)
+            contenedorInmuebles.innerHTML = "";
+            for (const inmuebleS2 of inmuebleFiltrado) {
+                const {id, img, tipo, ubicacion, ha, precio, accion} = inmuebleS2;
+                let div = document.createElement("div");
+                div.className = "producto";
+                div.innerHTML += ` 
+                      <div class="card" style="width: 12rem;">
+                      <img src="${img}" class="card-img-top imgCampoContenedor" alt="...">
+                      <div class="card-body divUbicacion">
+                          <h5 class="card-title fs-6">${tipo}</h5>
+                          <p class="card text">${ubicacion}</p>
+                      </div>
+                      <ul class="list-group list-group-flush ulHaPrecio">
+                          <li class="list-group-item">(${ha}ha)</li>
+                          <li class="list-group-item">Por ha $${precio}USD</li>
+                      </ul>
+                      <div class="card-body">
+                          <a href="../secciones/contacto.html" class="card-link btn-sm">Contacto</a>
+                          <a href="#" class="btn btn-secondary btn-sm">${accion}</a>
+                          <a id="botonAgregar${id}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="fas fa-cart-plus"></i></a>
+                      </div>
+                      </div>
+                `;
+            contenedorInmuebles.appendChild(div);
+            }
         }
     })
-    //BUSCADOR TERNARIO
-    buscador.addEventListener('input', () => {
-        buscador.value === "" ? mostrarInmuebles(inmuebleS) : mostrarInmuebles(inmuebleS.filter(elemento => elemento.ubicacion.toLowerCase().includes(buscador.value.toLowerCase())))
-    });
+    buscador.addEventListener('keyup', (event) => {
+        const input = event.target.value;
+        if(input === "") {
+            mostrarInmuebles(inmuebleS)
+        }else{
+            const inmuebleUbicacion = inmuebleS.filter(elemento => elemento.ubicacion.toLowerCase().includes(input.toLowerCase()))
+            //console.log(input);
+            contenedorInmuebles.innerHTML = "";
+            for (const inmuebleS2 of inmuebleUbicacion) {
+               const {id, img, tipo, ubicacion, ha, precio, accion} = inmuebleS2;
+                let div = document.createElement("div");
+                div.className = "producto";
+                div.innerHTML += ` 
+                      <div class="card" style="width: 12rem;">
+                      <img src="${img}" class="card-img-top imgCampoContenedor" alt="...">
+                      <div class="card-body divUbicacion">
+                          <h5 class="card-title fs-6">${tipo}</h5>
+                          <p class="card text">${ubicacion}</p>
+                      </div>
+                      <ul class="list-group list-group-flush ulHaPrecio">
+                          <li class="list-group-item">(${ha}ha)</li>
+                          <li class="list-group-item">Por ha $${precio}USD</li>
+                      </ul>
+                      <div class="card-body">
+                          <a href="../secciones/contacto.html" class="card-link btn-sm">Contacto</a>
+                          <a href="#" class="btn btn-secondary btn-sm">${accion}</a>
+                          <a id="botonAgregar${id}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="fas fa-cart-plus"></i></a>
+                      </div>
+                      </div>
+                `;
+            contenedorInmuebles.appendChild(div);
+            }
+        }
+    })
  }
- BuscadorYFiltro();
+ buscadorYFiltro()
 
- //Codigo anterior a utilizar el fetch
-//ECOMMERCE
-//mostrarInmuebles(inmuebles)
-// function mostrarInmuebles (array) {
-//     contenedorInmuebles.innerHTML = "";
-//   array.forEach((producto) => {
-
-//       //Alias desestructuracion
-//       const {id, img, tipo, ubicacion, ha, precio, accion} = producto;
-
-//       let div = document.createElement("div");
-//       div.className = "producto";
-//       div.innerHTML += ` 
-//                       <div class="card" style="width: 12rem;">
-//                       <img src="${img}" class="card-img-top imgCampoContenedor" alt="...">
-//                       <div class="card-body divUbicacion">
-//                           <h5 class="card-title fs-6">${tipo}</h5>
-//                           <p class="card text">${ubicacion}</p>
-//                       </div>
-//                       <ul class="list-group list-group-flush ulHaPrecio">
-//                           <li class="list-group-item">(${ha}ha)</li>
-//                           <li class="list-group-item">Por ha $${precio}USD</li>
-//                       </ul>
-//                       <div class="card-body">
-//                           <a href="../secciones/contacto.html" class="card-link">Contacto</a>
-//                           <a href="#" class="btn btn-secondary">${accion}</a>
-//                           <a id="botonAgregar${id}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="fas fa-cart-plus"></i></a>
-//                       </div>
-//                       </div>
-//       `;
-//       contenedorInmuebles.appendChild(div);
-
-//       let btnAgregar = document.getElementById(`botonAgregar${id}`);
-        
-//         btnAgregar.addEventListener('click', () => {
-//             //console.log(btnAgregar.id);
-//             agregarAlCarrito(id)
-//             Toastify({
-//                 text: "Agregado al carrito",
-//                 duration: 2000,
-//                 style: {
-//                   backgroundColor: "rgb(2,0,36)",
-//                 }
-//               }).showToast();
-//         })
-//   })
-// };
-// mostrarInmuebles(inmuebles);
 
 function agregarAlCarrito(id) {
-
     let repetido = carritoDeCompras.some(item => item.id === id);
     if (!repetido) {
-        console.log(repetido);
-    
+        //console.log(repetido);
         let productoAgregar = inmuebles.find(elemento => elemento.id === id);
-     //console.log(productoAgregar);
+    //console.log(productoAgregar);
     // Lo que hay en carritoDeCompras se conserva, y se agrega este objeto
     carritoDeCompras = [...carritoDeCompras, productoAgregar];
     actualizarCarrito();
@@ -151,7 +154,6 @@ function agregarAlCarrito(id) {
 }
 
 function mostrarCarrito(productoAgregar) {
-
     //Alias desestructuracion
     const {id, img, tipo, ubicacion, ha, precio, accion } = productoAgregar;
 
@@ -196,7 +198,6 @@ function actualizarCarrito() {
 function recuperar() {
     let recuperarLS = JSON.parse(localStorage.getItem('carrito'));
     console.log(recuperarLS);
-
     //AND (if recuperarLS es true/ rta verdadera)
     recuperarLS &&
         recuperarLS.forEach(el=> {

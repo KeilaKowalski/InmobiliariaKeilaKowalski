@@ -1,4 +1,17 @@
 /* Pagina Campos */
+.divUbiFiltro {
+  display: block;
+  position: sticky;
+  z-index: 1;
+  top: 65px;
+}
+#filtro, #search {
+  margin: 0px 5px;
+  background-color: rgb(244, 240, 240);
+}
+#filtro:hover{
+  cursor: pointer;
+}
 #contenedorInmuebles {
   display: flex;
   flex-wrap: wrap;
@@ -16,7 +29,6 @@
     }
   }
 }
-
 .divUbicacion {
   margin-top: 5px;
   padding: 3px 10px;
@@ -34,4 +46,17 @@
   color: black;
   margin-top: 5px;
   margin-bottom: 10px;
+}
+.fas {
+  color: red;
+  font-weight: 600;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.producto {
+  margin: 7px 2px;
+}
+.card {
+  margin-bottom: 0px;
 }
